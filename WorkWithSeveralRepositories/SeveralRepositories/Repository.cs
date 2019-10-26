@@ -19,7 +19,7 @@ namespace SeveralRepositories
     {
       await Task.Delay(_delay);
 
-      const int entityCount = 10;
+      const int entityCount = 3;
       var entities = new List<Entity>(entityCount);
       for (var i = 0; i < entityCount; i++) 
         entities.Add(CreateEntity(i));

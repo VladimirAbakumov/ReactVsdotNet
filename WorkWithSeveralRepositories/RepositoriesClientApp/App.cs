@@ -10,7 +10,7 @@ namespace RepositoriesClientApp
   {
     public async Task Run()
     {
-      var repositories = CreateRepositories();
+      var repositories = RepositoriesBuilder.Build();
       var entityLists = GetEntities(repositories);
 
       Console.WriteLine("Start async foreach");
@@ -25,7 +25,9 @@ namespace RepositoriesClientApp
 
     public async Task RunConcurrently()
     {
-      var repositories = CreateRepositories();
+      Console.WriteLine($"{DateTime.Now:O} Start");
+      
+      var repositories = RepositoriesBuilder.Build();
 
       var tasks = repositories.Select(r => r.GetEntities()).ToList();
 
@@ -40,21 +42,7 @@ namespace RepositoriesClientApp
       }
     }
 
-    private IReadOnlyList<Repository> CreateRepositories() =>
-      new List<Repository>
-      {
-          new Repository(1, 3000),
-          new Repository(2, 5000),
-          new Repository(3, 3100),
-          new Repository(4, 5000),
-          new Repository(5, 10000),
-          new Repository(6, 10000),
-          new Repository(7, 100),
-          new Repository(8, 100),
-          new Repository(9, 100)
-      };
-
-    private async IAsyncEnumerable<IReadOnlyList<Entity>> GetEntities(IReadOnlyList<Repository> repositories)
+    private async IAsyncEnumerable<IReadOnlyList<Entity>> GetEntities(IReadOnlyList<IRepository> repositories)
     {
       Console.WriteLine("I am GetEntities");
       

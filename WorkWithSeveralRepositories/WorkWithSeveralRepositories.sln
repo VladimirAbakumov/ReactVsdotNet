@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeveralRepositories", "Seve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoriesClientApp", "RepositoriesClientApp\RepositoriesClientApp.csproj", "{0DE1CECF-53EB-4059-BFD2-015DC7FA5C36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoriesClientAppRx", "RepositoriesClientAppRx\RepositoriesClientAppRx.csproj", "{EC219E86-1E5D-4024-98D9-75F146B41074}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{0DE1CECF-53EB-4059-BFD2-015DC7FA5C36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DE1CECF-53EB-4059-BFD2-015DC7FA5C36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DE1CECF-53EB-4059-BFD2-015DC7FA5C36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC219E86-1E5D-4024-98D9-75F146B41074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC219E86-1E5D-4024-98D9-75F146B41074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC219E86-1E5D-4024-98D9-75F146B41074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC219E86-1E5D-4024-98D9-75F146B41074}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
