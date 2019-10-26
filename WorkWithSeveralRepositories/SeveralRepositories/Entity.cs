@@ -1,3 +1,5 @@
+using System;
+
 namespace SeveralRepositories
 {
   public class Entity
@@ -11,5 +13,7 @@ namespace SeveralRepositories
     public int Id { get; }
     
     public string Data { get; }
+
+    public override string ToString() => $"{DateTime.Now:O} Entity {Id} with data: {Data}";
   }
 }
