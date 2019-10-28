@@ -1,4 +1,5 @@
 ﻿using System;
+using SeveralRepositories;
 
 namespace RepositoriesClientAppRx
 {
@@ -6,7 +7,15 @@ namespace RepositoriesClientAppRx
   {
     static void Main(string[] args)
     {
-      new App().Run();
+      var repository = new RepositoriesFacadeRx();
+      repository.Subject.Subscribe(e =>
+      {
+        foreach (var entity in e)
+          Console.WriteLine(entity);
+      });
+      repository.Run();
+
+      Console.ReadKey();
     }
   }
 }

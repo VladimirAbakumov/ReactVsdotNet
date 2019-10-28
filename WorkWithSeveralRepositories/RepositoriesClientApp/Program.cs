@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using SeveralRepositories;
 
 namespace RepositoriesClientApp
 {
@@ -6,7 +8,15 @@ namespace RepositoriesClientApp
   {
     static async Task Main(string[] args)
     {
-      await new App().RunConcurrently();
+      var repositories = new RepositoriesFacade();
+
+      await foreach (var entities in repositories.GetEntities())
+      {
+        foreach (var entity in entities)
+        {
+          Console.WriteLine(entity);          
+        }
+      }
     }
   }
 }
